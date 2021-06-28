@@ -19,13 +19,11 @@ const App = () => {
 
   const addBookHandler = (title, author, isbn) => {
     setBooks((prvBooks) => {
-      return [...prvBooks, { title, author, isbn }];
+      return [{ title, author, isbn }, ...prvBooks];
     });
   };
 
   const deleteBookHandler = (isbn) => {
-    // const result = confirm("Are you sure! the record will be deleted");
-    // result &&
     setBooks((prvBooks) => {
       return prvBooks.filter((book) => book.isbn !== isbn);
     });
@@ -34,14 +32,14 @@ const App = () => {
   return (
     <div className="container-fluid app">
       <div className="row">
-        <h1 className="text-center mt-5">Book List App</h1>
-        <div className="col-md-6 p-5">
-          <div className="card text-dark">
+        <h1 className="text-center text-light mt-5">Book List App</h1>
+        <div className="col-md-5 p-5">
+          <div className="card">
             <AddBook addBook={addBookHandler} />
           </div>
         </div>
-        <div className="col-md-6 p-5">
-          <div className="card text-dark">
+        <div className="col-md-7 p-5">
+          <div className="card">
             {books.length < 1 && <div>Book list is empty</div>}
             {books.length > 0 && (
               <AllBooks books={books} deleteBook={deleteBookHandler} />

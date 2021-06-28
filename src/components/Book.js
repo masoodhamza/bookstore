@@ -1,7 +1,7 @@
 import Button from "./Button";
 
 const Book = (props) => {
-  const deleteBookHandler = (isbn) => {
+  const deleteBookHandler = () => {
     const onConfirm = window.confirm("Are you sure!");
     onConfirm && props.onDelete(props.book.isbn);
   };
