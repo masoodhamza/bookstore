@@ -1,4 +1,4 @@
-import React from "react";
+import Book from "./Book";
 
 const AllBooks = (props) => {
   return (
@@ -13,19 +13,7 @@ const AllBooks = (props) => {
       </thead>
       <tbody>
         {props.books.map((book) => (
-          <tr key={book.isbn}>
-            <td>{book.title}</td>
-            <td>{book.author}</td>
-            <td>{book.isbn}</td>
-            <td>
-              <button
-                className="btn btn-sm btn-danger"
-                onClick={() => props.deleteBook(book.isbn)}
-              >
-                Button
-              </button>
-            </td>
-          </tr>
+          <Book book={book} onDelete={props.deleteBook} />
         ))}
       </tbody>
     </table>

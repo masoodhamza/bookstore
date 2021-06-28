@@ -24,6 +24,8 @@ const App = () => {
   };
 
   const deleteBookHandler = (isbn) => {
+    // const result = confirm("Are you sure! the record will be deleted");
+    // result &&
     setBooks((prvBooks) => {
       return prvBooks.filter((book) => book.isbn !== isbn);
     });
