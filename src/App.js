@@ -4,11 +4,28 @@ import AddBook from "./components/AddBook";
 import AllBooks from "./components/AllBooks";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([
+    {
+      title: "The Grass is Always Greener",
+      author: "Jeffrey Archer",
+      isbn: 1860920497,
+    },
+    {
+      title: "Murder!",
+      author: "Arnold Bennett",
+      isbn: 1860920128,
+    },
+  ]);
 
   const addBookHandler = (title, author, isbn) => {
     setBooks((prvBooks) => {
       return [...prvBooks, { title, author, isbn }];
+    });
+  };
+
+  const deleteBookHandler = (isbn) => {
+    setBooks((prvBooks) => {
+      return prvBooks.filter((book) => book.isbn !== isbn);
     });
   };
 
@@ -23,7 +40,10 @@ const App = () => {
         </div>
         <div className="col-md-6 p-5">
           <div className="card text-dark">
-            <AllBooks books={books} />
+            {books.length < 1 && <div>Book list is empty</div>}
+            {books.length > 0 && (
+              <AllBooks books={books} deleteBook={deleteBookHandler} />
+            )}
           </div>
         </div>
       </div>

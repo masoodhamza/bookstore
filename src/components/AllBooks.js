@@ -17,7 +17,14 @@ const AllBooks = (props) => {
             <td>{book.title}</td>
             <td>{book.author}</td>
             <td>{book.isbn}</td>
-            <td>Delete</td>
+            <td>
+              <button
+                className="btn btn-sm btn-danger"
+                onClick={() => props.deleteBook(book.isbn)}
+              >
+                Button
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>

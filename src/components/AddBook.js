@@ -14,6 +14,10 @@ const AddBook = (props) => {
     const isbn = isbnRef.current.value;
 
     props.addBook(title, author, isbn);
+
+    titleRef.current.value = "";
+    authorRef.current.value = "";
+    isbnRef.current.value = "";
   };
 
   return (
