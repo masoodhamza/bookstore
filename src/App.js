@@ -1,16 +1,16 @@
 import { useState } from "react";
 import "./App.css";
 import AddBook from "./components/AddBook";
+import AllBooks from "./components/AllBooks";
 
 const App = () => {
-  const [book, setBook] = useState([]);
+  const [books, setBooks] = useState([]);
 
   const addBookHandler = (title, author, isbn) => {
-    setBook((prvBooks) => {
+    setBooks((prvBooks) => {
       return [...prvBooks, { title, author, isbn }];
     });
   };
-  console.log(book);
 
   return (
     <div className="container-fluid app">
@@ -19,6 +19,11 @@ const App = () => {
         <div className="col-md-6 p-5">
           <div className="card text-dark">
             <AddBook addBook={addBookHandler} />
+          </div>
+        </div>
+        <div className="col-md-6 p-5">
+          <div className="card text-dark">
+            <AllBooks books={books} />
           </div>
         </div>
       </div>
