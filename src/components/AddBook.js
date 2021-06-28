@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Button from "./Button";
 
-const AddBook = () => {
+const AddBook = (props) => {
   const titleRef = useRef("");
   const authorRef = useRef("");
   const isbnRef = useRef("");
@@ -13,11 +13,12 @@ const AddBook = () => {
     const author = authorRef.current.value;
     const isbn = isbnRef.current.value;
 
-    console.log(title, author, isbn);
+    props.addBook(title, author, isbn);
   };
 
   return (
     <form onSubmit={addBookHandler} className="p-3">
+      <h2 className="text-center h2">Add new book</h2>
       <div className="mb-3">
         <label className="form-label">Title</label>
         <input className="form-control" type="text" ref={titleRef} />
