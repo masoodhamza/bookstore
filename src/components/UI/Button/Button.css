@@ -1,0 +1,10 @@
+button {
+  width: 100%;
+  background-color: blueviolet;
+  color: white;
+}
+
+button :hover {
+  background-color: blanchedalmond;
+  color: black;
+}

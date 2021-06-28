@@ -1,10 +1,17 @@
-.App-header {
+.app {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.app-card {
+  background-color: coral;
+  padding: 10px;
+  display: flex;
+  align-content: space-between;
 }

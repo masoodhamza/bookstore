@@ -1,0 +1,26 @@
+.form-control {
+  background-color: aliceblue;
+  color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.form-control label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button {
+  background-color: blue;
+}
+
+.button :hover {
+  background-color: aqua;
+}
